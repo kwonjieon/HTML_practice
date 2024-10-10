@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+    .signup-employer {
+      background-color: #fff;
+      display: flex;
+      max-width: 480px;
+      width: 100%;
+      padding-bottom: 17px;
+      flex-direction: column;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+    
+    .header-image {
+      aspect-ratio: 8.55;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      z-index: 10;
+    }
+    
+    .content-wrapper {
+      display: flex;
+      margin-top: -21px;
+      width: 100%;
+      flex-direction: column;
+      align-items: start;
+    }
+    
+    .page-title {
+      display: flex;
+      width: 201px;
+      max-width: 100%;
+      gap: 20px;
+      color: #000;
+      white-space: nowrap;
+      justify-content: space-between;
+      font: 600 16px/72px Inter, sans-serif;
+    }
+    
+    .back-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 17px;
+      margin: auto 0;
+    }
+    
+    .form-container {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      margin: 1px 0 0 2px;
+    }
+    
+    .progress-bar {
+      display: flex;
+      width: 222px;
+      max-width: 100%;
+      align-items: center;
+      gap: 40px 90px;
+      justify-content: space-between;
+    }
+    
+    .progress-step {
+      border-radius: 10px;
+      display: flex;
+      height: 68px;
+      width: 65px;
+    }
+    
+    .progress-step-active {
+      border: 1px solid #000;
+    }
+    
+    .progress-step-inactive {
+      border: 1px solid #d9d9d9;
+    }
+    
+    .form-fields {
+      align-self: stretch;
+      display: flex;
+      margin-top: 33px;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+    }
+    
+    .input-group {
+      border-radius: 0;
+      display: flex;
+      width: 100%;
+      max-width: 320px;
+      flex-direction: column;
+      padding: 4px 0;
+      margin-bottom: 20px;
+    }
+    
+    .input-label {
+      align-self: start;
+      display: flex;
+      white-space: nowrap;
+      
+    margin-bottom: 4px; /* Decrease this value to reduce space */
+    }
+    
+    .label-text {
+      color: #000;
+    }
+    
+    .input-value {
+      color: #878787;
+      letter-spacing: -0.41px;
+    }
+    
+    
+    .input-field {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center; /* Center items vertically */
+  padding: 13px 20px;
+  gap: 10px; /* 이미지와 input 사이 간격 */
+  flex-direction: row; /* 이미지를 옆에 나란히 배치 */
+}
+    
+    .input-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 20px;
+    }
+    
+    .business-verification {
+    color: #000; /* Black color for '사업자 인증하기' */
+}
+    
+    .verification-field {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 11px 19px;
+
+      gap: 10px; /* 이미지와 input 사이 간격 */
+        flex-direction: row; /* 이미지를 옆에 나란히 배치 */
+    }
+    
+    .terms-section {
+      border-radius: 0;
+      display: flex;
+      margin-top: 9px;
+      max-width: 100%;
+      width: 315px;
+      padding-top: 9px;
+      flex-direction: column;
+      font-family: Inter, sans-serif;
+      color: #000;
+      font-weight: 300;
+    }
+    
+    .terms-title {
+      font-size: 15px;
+      align-self: start;
+    }
+    
+    .terms-container {
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column;
+      font-size: 8px;
+      border: 1px solid #d9d9d9;
+      
+      margin-bottom: 20px;
+      
+        flex-direction: column;
+        align-items: start;
+        padding: 13px 20px;
+      
+        gap: 10px; /* 이미지와 input 사이 간격 */
+        flex-direction: row; /* 이미지를 옆에 나란히 배치 */
+    }
+    
+    .terms-row {
+      display: flex;
+      width: 100%;
+      gap: 20px;
+      justify-content: space-between;
+    }
+    
+    .terms-checkbox {
+  display: flex; /* Use Flexbox for layout */
+  justify-content: space-between; /* Space between checkbox and image */
+  align-items: center; /* Center items vertically */
+  padding: 10px; /* Optional: add padding for spacing */
+}
+    
+    .checkbox {
+      display: flex;
+      width: 14px;
+      height: 14px;
+      border: 1px solid #878787;
+    }
+    
+    .terms-divider {
+      margin-top: 6px;
+      height: 1px;
+      border: 1px solid #d9d9d9;
+    }
+    
+    .signup-button {
+      color: #fff;
+      background-color: #00b0ff;
+      padding: 12px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        
+        width: 316px;
+    }
+    
+    @media (max-width: 640px) {
+      .form-container {
+        margin-left: 1px;
+      }
+    }
+    
+.checkbox-container {
+  display: flex; /* Use Flexbox for layout */
+  justify-content: space-between; /* Space between checkbox and image */
+  align-items: center; /* Center items vertically */
+  width: 100%; /* Make sure it takes full width */
+}
+
+.input-icon {
+  margin-left: auto; /* Pushes the image to the right */
+}
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .text-input {
+            background-color: #f2f2f2; /* 배경색을 회색으로 맞춤 */
+            border: 1px  #ccc;
+            border-radius: 5px;
+            padding: 8px;
+            flex-grow: 1; /* input이 가로 공간을 더 차지하게 만듦 */
+            font-size: 14px;
+        }
+        .required {
+        color: #c81c1c; /* Red color for '(필수)' */
+    
+    }
+    .icon.user img {
+        opacity: 0.5; /* Adjust the value between 0 and 1 for desired transparency */
+    }
+    .terms-span {
+    font-size: 14px; /* Change this value to your desired size */
+    font-weight: 500; /* Optional: Change weight for better visibility */
+    margin-left: 8px; /* Add margin to create space between checkbox and text */
+}
+        
+    </style>
+    
+</head>
+<body>
+    <section class="signup-employer">
+        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/9df7cc520388d5921e759061cf2a8e8823817b09250dc14c93b3423bcc71cb1f?placeholderIfAbsent=true&apiKey=57b578e0d8ca4c90b18340609eda921a" alt="" class="header-image" />
+        <div class="content-wrapper">
+          <header class="page-title">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/83b9c506f51261ae4ecf97800f865640ea6eb29da5f1786a2633452cb0f73f41?placeholderIfAbsent=true&apiKey=57b578e0d8ca4c90b18340609eda921a" alt="Back" class="back-icon" />
+            <h1>회원가입</h1>
+          </header>
+          <main class="form-container">
+            <div class="progress-bar">
+                <div class="icon home" id="employer">
+                    <img src="./img/구인자활성이미지.png" alt="구인자">
+                </div>
+                <div class="icon user" id="employee">
+                    <img src="./img/구직자활성이미지.png" alt="구직자">
+                </div>
+            </div>
+            <form class="form-fields">
+              <div class="input-group">
+                <label for="name" class="input-label">
+                  <span class="label-text">이름</span>
+                </label>
+                <div class="input-field">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1885ef9a6ca09f96e8ea2e4f4434ef5951ead29f65c3bf5457dbe31c51fc06bc?placeholderIfAbsent=true&apiKey=57b578e0d8ca4c90b18340609eda921a" alt="" class="input-icon" />
+                  <input type="text" placeholder="홍길동" class="text-input"/>
+                
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="email" class="input-label">
+                  <span class="label-text">이메일 주소</span>
+                </label>
+                <div class="input-field">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/19ceacad3b6a12ebf225189f1029bff247f29cd4f4ba22792114cbeb038003bd?placeholderIfAbsent=true&apiKey=57b578e0d8ca4c90b18340609eda921a" alt="" class="input-icon" />
+                  <input type="text" placeholder="example@naver.com" class="text-input"/>
+                
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="password" class="input-label">
+                  <span class="label-text">비밀번호</span>
+                </label>
+                <div class="input-field">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/1e86d858e9cd2fa91e11c7a168bae7a90b3bd368f777d1c1e5266076f1afb7e7?placeholderIfAbsent=true&apiKey=57b578e0d8ca4c90b18340609eda921a" alt="" class="input-icon" />
+                  <input type="text" placeholder="**********" class="text-input"/>
+                
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="phone" class="input-label">
+                  <span class="label-text">전화번호</span>
+                </label>
+                <div class="input-field">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a28101f3d4f648960da631fd840a4accca345a3ea1ccb35f045fafe61aeec967?placeholderIfAbsent=true&apiKey=57b578e0d8ca4c90b18340609eda921a" alt="" class="input-icon" />
+                  <input type="text" placeholder="010-XXXX-XXXX" class="text-input"/>
+                
+                </div>
+              </div>
+              <div class="input-group">
+                <label for="business-verification" class="input-label">
+                  <span class="business-verification">사업자 인증하기</span>
+                  <span class="required">(필수)</span>
+                </label>
+                <div class="verification-field">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a404300c4d346f08417a8c7d2e39640b10d09d4c8b22275f6edb417f864480f1?placeholderIfAbsent=true&apiKey=57b578e0d8ca4c90b18340609eda921a" alt="" class="input-icon" />
+                  <input type="text" placeholder="0000000000" class="text-input" required /> <!-- Add required attribute -->
+                </div>
+              </div>
+              <div class="terms-section">
+                <h2 class="terms-title">약관 동의</h2>
+                <div class="terms-container">
+                  <div class="terms-row">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="all-terms" class="visually-hidden" />
+                        <label for="all-terms" class="checkbox"></label>
+                        <span class="terms-span">전체 약관 동의</span>
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/25d2f03f4d8da066d59e5012ab8737904b198806cb1d46ded244a8c3c32dbf89?placeholderIfAbsent=true&apiKey=57b578e0d8ca4c90b18340609eda921a" alt="Expand terms" class="input-icon expand-icon" />
+                    </div>
+                      
+                      
+                      
+                  <div class="terms-divider"></div>
+                </div>
+              </div>
+              <button type="submit" class="signup-button">회원가입</button>
+            </form>
+          </main>
+        </div>
+      </section>
+</body>
+</html>
+
+
+
+
+
